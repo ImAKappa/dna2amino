@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Dogma Test</title>
+  <link rel="stylesheet" href="assets/main.css">
+  <script type="text/javascript" src="src/InputHandler.js" defer></script>
+  <script type="text/javascript" src="src/TranslationMachines.js" defer></script>
+  <script type="text/javascript" src="src/GeneticCode.js" defer></script>
+  <script type="text/javascript" src="src/main.js" defer></script>
+</head>
+  <body>
+    <div class="input-area">
+      <h3>Enter DNA sequence</h3>
+      <p>upper or lower case is fine</p>
+      <p>spaces are allowed but optional</p>
+      <input type="text" id="input-codons" value="sequence goes here">
+      <p id="prev-input">Last input:</p>
+      <div class="btns">
+        <button id="start-btn">Translate</button>
+        <button id="clear-btn">Clear</button>
+        <button id="space-btn">Space</button>
+        <button id="a-btn">A</button>
+        <button id="t-btn">T</button>
+        <button id="c-btn">C</button>
+        <button id="g-btn">G</button>
+      </div>
+      <a href="https://en.wikipedia.org/wiki/DNA_codon_table" target="_blank">Codon table (Wikipedia)</a>
+    </div>
+    <canvas id="myCanvas"></canvas>
+  </body>
+</html>
