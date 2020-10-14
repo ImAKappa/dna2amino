@@ -5,29 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Central Dogma Test</title>
   <link rel="stylesheet" href="assets/main.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script type="text/javascript" src="src/InputHandler.js" defer></script>
   <script type="text/javascript" src="src/TranslationMachines.js" defer></script>
   <script type="text/javascript" src="src/GeneticCode.js" defer></script>
   <script type="text/javascript" src="src/main.js" defer></script>
 </head>
-  <body>
-    <div class="input-area">
-      <h3>Enter DNA sequence</h3>
-      <p>upper or lower case is fine</p>
-      <p>spaces are allowed but optional</p>
-      <input type="text" id="input-codons" value="sequence goes here">
-      <p id="prev-input">Last input:</p>
-      <div class="btns">
-        <button id="start-btn">Translate</button>
-        <button id="clear-btn">Clear</button>
-        <button id="space-btn">Space</button>
-        <button id="a-btn">A</button>
-        <button id="t-btn">T</button>
-        <button id="c-btn">C</button>
-        <button id="g-btn">G</button>
+  <body class="text-center">
+    <header>
+      <div class="jumbotron jumbotron-fluid text-light bg-success">
+        <div class="container">
+          <h2>DNA to Amino Acid</h2>
+        </div>
       </div>
-      <a href="https://en.wikipedia.org/wiki/DNA_codon_table" target="_blank">Codon table (Wikipedia)</a>
+      
+    </header>
+    <div id="input-area" class="container">
+      <div>
+        <input type="text" id="input-codons" value="Enter DNA sequence" class="form-control my-3">
+        <p id="prev-input">Last input:</p>
+      </div>
+      <div class="btns">
+        <button id="start-btn" class="btn btn-outline-dark">Translate</button>
+        <button id="clear-btn" class="btn btn-outline-dark">Clear</button>
+        <button id="space-btn" class="btn btn-outline-dark">Space</button>
+        <div class="btn-group">
+          <button id="a-btn" class="btn text-white bg-danger">A</button>
+          <button id="t-btn" class="btn text-white bg-primary">T</button>
+          <button id="c-btn" class="btn text-white bg-warning">C</button>
+          <button id="g-btn" class="btn text-white bg-success">G</button>
+        </div>
+      </div>
+      <div class="dropdown my-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">Instructions</button>
+        <div class="dropdown-menu">
+          <span class="dropdown-item-text">upper or lower case is fine</span>
+          <span class="dropdown-item-text">spaces are allowed but optional</span>
+          <span class="dropdown-item-text">5' to 3' direction</span>
+        </div>
+      </div>
+      <a href="https://en.wikipedia.org/wiki/DNA_codon_table" target="_blank" class="badge badge-info">Codon table (Wikipedia)</a>
     </div>
     <canvas id="myCanvas"></canvas>
+    <footer>By Alex Kappen &copy; 2020</footer>
   </body>
 </html>
