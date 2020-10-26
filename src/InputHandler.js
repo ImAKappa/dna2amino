@@ -4,7 +4,7 @@ class InputHandler {
     this.inputBox = inputBox;
     // Translate Btn
     this.translateBtn = translateBtn.addEventListener('click', () => {
-      this.translateSequence(this.inputBox.value.toUpperCase().replace(/\s+/g, ''));
+      this.translateSequence(this.inputBox.value.toUpperCase().replace(/\s+/g, '').replace(/U/g, 'T'));
     });
     // Clear Btn
     this.clearBtn = clearBtn.addEventListener('click', () => {
@@ -20,7 +20,7 @@ class InputHandler {
   validInput(inputString) {
     for (let i = 0; i < inputString.length; i++) {
       let checkLetter = inputString.charAt(i);
-      if (checkLetter !== "A" && checkLetter !== "T" && checkLetter !== "G" && checkLetter !== "C") {
+      if (checkLetter !== "A" && checkLetter !== "T" && checkLetter !== "G" && checkLetter !== "C" && checkLetter !== "U") {
         return false;
       }
     }
