@@ -1,10 +1,23 @@
 <script lang="ts">
+    import InputHandler from "./InputHandler.svelte";
+
 	export let name: string;
 </script>
 
+<svelte:head>
+	<title>dna2amino</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
+
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+    <p>Enter DNA sequence:</p>
+    <InputHandler/>
+
+
+    <p>Ouput amino acid sequence</p>
+    <p class="output"></p>
 </main>
 
 <style>
