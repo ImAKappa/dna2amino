@@ -1,4 +1,7 @@
-class GeneticCode {
+export class GeneticCode {
+
+    aminoCodonDict: {}
+
     constructor() {
         // Standard genetic code
       this.aminoCodonDict = { 'A': ['GCA','GCC','GCG','GCT'],
@@ -6,7 +9,7 @@ class GeneticCode {
        'D': ['GAC', 'GAT'], 
        'E': ['GAA','GAG'], 
        'F': ['TTC','TTT'], 
-       'G': ['GGA','GGC','GGG','GGT'], 
+       'G': ['GGA','GGC','GGG','GGT'],
        'H': ['CAC','CAT'], 
        'I': ['ATA','ATC','ATT'], 
        'K': ['AAA','AAG'], 
@@ -24,4 +27,9 @@ class GeneticCode {
     }
 
     // Exceptions - see http://eweb.furman.edu/~wworthen/bio111/code.htm
+
+    dna2mrna(dna: string): string {
+        let mrna = dna.replaceAll('T', 'U');
+        return mrna
+    }
 }

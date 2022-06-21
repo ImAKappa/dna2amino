@@ -56,6 +56,7 @@
 </script>
 
 <div class="container">
+    <h2>Enter DNA sequence:</h2>
     <input type="text" placeholder="Enter DNA sequence"
         bind:value={codons}
         on:input={validate} 

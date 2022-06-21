@@ -1,7 +1,8 @@
-<script>
-    import InputHandler from "./lib/InputHandler.svelte";
-
-	export let name;
+<script lang="ts">
+    import AminoAcidOutput from "./lib/AminoAcidOutput.svelte";
+    import DnaInput from "./lib/DNAInput.svelte";
+    import MrnaOutput from "./lib/MRNAOutput.svelte";
+	export let name: string = "DIO";
 </script>
 
 <svelte:head>
@@ -12,12 +13,10 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-    <p>Enter DNA sequence:</p>
-    <InputHandler/>
+    <DnaInput />
+    <MrnaOutput dnaseq={'AAT GCG TCT ATG'} />
 
-
-    <p>Ouput amino acid sequence</p>
-    <p class="output"></p>
+    <AminoAcidOutput />
 </main>
 
 <style>
