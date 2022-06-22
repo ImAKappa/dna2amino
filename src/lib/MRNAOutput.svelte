@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let dnaseq: string = '';
+    export let dnaSeq: string = '';
     /* Assumptions about `dnaseq`:
     - contains spaces (which separates 3-base codons)
     - bases are capitalized
@@ -8,21 +8,21 @@
 
     const validBases = /^[ATCG]+$/;
 
-    const isValidBases = (dnaseq: string, seqRegEx: RegExp): boolean => {
-        return seqRegEx.test(dnaseq.replaceAll(' ', ''));
+    const isValidBases = (dnaSeq: string, seqRegEx: RegExp): boolean => {
+        return seqRegEx.test(dnaSeq.replaceAll(' ', ''));
     }
 
-    const toMRNA = (dnaseq: string): string => {
-        if (!isValidBases(dnaseq, validBases)) return 'invalid base detected';
+    const toMRNA = (dnaSeq: string): string => {
+        if (!isValidBases(dnaSeq, validBases)) return 'invalid base detected';
         // mRNA contains Uracil (U) instead of Thymine (T) in DNA
-        let mRNA = dnaseq.replaceAll('T', 'U');
+        let mRNA = dnaSeq.replaceAll('T', 'U');
         return mRNA;
     }
 </script>
 
 <div class="mrna-output">
     <h2>mRNA:</h2>
-    <p>{toMRNA(dnaseq)}</p>
+    <p>{toMRNA(dnaSeq)}</p>
 </div>
 
 <style>

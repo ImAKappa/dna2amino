@@ -1,4 +1,14 @@
 <script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    function emitSequence() {
+        dispatch('dna-change', {
+            dnaSeq: dnaSeq,
+        });
+        return;
+    }
 
     let dnaSeq: string = '';
     // display sequence
@@ -61,6 +71,7 @@
         bind:value={codons}
         on:input={validate} 
     >
+    <button on:click={emitSequence} >Translate</button>
 </div>
 
 <style>

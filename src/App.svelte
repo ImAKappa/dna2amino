@@ -1,8 +1,18 @@
 <script lang="ts">
     import AminoAcidOutput from "./lib/AminoAcidOutput.svelte";
     import DnaInput from "./lib/DNAInput.svelte";
-    import MrnaOutput from "./lib/MRNAOutput.svelte";
+    import MRNAOutput from "./lib/MRNAOutput.svelte";
+
+
 	export let name: string = "DIO";
+
+    let dnaSeq: string = '';
+    let mRNASeq: string = '';
+    let aminoAcidSeq: string = '';
+
+    const updateDNA = (event) => {
+        dnaSeq = event.detail.dnaSeq;
+    }
 </script>
 
 <svelte:head>
@@ -13,8 +23,8 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-    <DnaInput />
-    <MrnaOutput dnaseq={'AAT GCG TCT ATG'} />
+    <DnaInput on:dna-change={updateDNA} />
+    <MRNAOutput {dnaSeq} />
 
     <AminoAcidOutput />
 </main>
