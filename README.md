@@ -2,10 +2,18 @@
 
 Convert dna sequence to amino acids in browser.
 
-Support for non-universal codons coming soon.
-See [this article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3597805/) for more details.
+## Requirements
 
-## Development Notes
+User enters string of dna sequences and presses "Transcribe" to convert to mRNA or "Translate" to convert to Amino Acid.
 
-- App created with Svelte, Vite, & TypeScript
-- Used `pnpm` instead of npm
+Valid input characters: "A", "T", "G", "C"
+
+## Feature Roadmap
+
+- [ ] Support for non-universal codons.
+See [Ohira et al. 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3597805/) for more details.
+
+<details><summary>## Development Notes</summary>
+- Webapp created with Svelte, Vite, & TypeScript
+- `pnpm` for package manager instead of npm 
+</details>

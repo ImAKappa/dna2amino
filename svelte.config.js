@@ -9,6 +9,7 @@ import preprocess from 'svelte-preprocess';
 const config = {
   preprocess: preprocess({
     typescript: true,
+    postcss: true,
   }),
   // ...other svelte options
 };
